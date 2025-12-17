@@ -1,2 +1,1 @@
-# OMsmart_AstroVersion
-Pagina de OMsmart version astro
+cambio de idioma base

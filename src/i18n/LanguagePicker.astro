@@ -1,0 +1,59 @@
+---
+import { getLangFromUrl, locales, useTranslation, slugify } from ".";
+const currentLang = getLangFromUrl(Astro.url);
+
+// Build a map of route slugs per language based on translation labels
+const SLUGS: Record<string, Record<string, string>> = {};
+const routeKeys = new Set<string>();
+for (const [l] of Object.entries(locales)) {
+  const t = await useTranslation(l as any);
+  SLUGS[l] = {} as Record<string, string>;
+  Object.entries(t.nav || {}).forEach(([key, label]) => {
+    if (key === "home") {
+      SLUGS[l][key] = "";
+    } else {
+      SLUGS[l][key] = slugify(String(label));
+    }
+    routeKeys.add(key);
+  });
+}
+const ROUTE_KEYS = Array.from(routeKeys);
+---
+
+<select name="language" id="i18n-language-picker">
+  {
+    Object.entries(locales).map(([lang, label]) => (
+      <option value={lang}>{label}</option>
+    ))
+  }
+</select>
+
+<script define:vars={{ currentLang, SLUGS, ROUTE_KEYS }}>
+  const i18nPicker = document.querySelector("#i18n-language-picker");
+  const path = window.location.pathname;
+
+  i18nPicker.value = currentLang;
+
+  function detectRouteKey() {
+    const parts = path.split("/").filter(Boolean); // [lang, slug...]
+    if (parts.length === 0) return "home";
+    const slug = parts[1] || ""; // parts[0] is lang
+    const curr = currentLang;
+    for (const key of ROUTE_KEYS) {
+      if (key === "home" && (slug === "" || slug === undefined)) return "home";
+      if (SLUGS[curr] && SLUGS[curr][key] === slug) return key;
+    }
+    return null;
+  }
+
+  i18nPicker.onchange = (e) => {
+    const selectedLang = e.target.value;
+    const routeKey = detectRouteKey();
+    let newPath = `/${selectedLang}/`;
+    if (routeKey && routeKey !== "home") {
+      const newSlug = SLUGS[selectedLang] && SLUGS[selectedLang][routeKey];
+      if (newSlug) newPath = `/${selectedLang}/${newSlug}/`;
+    }
+    window.location.pathname = newPath;
+  };
+</script>
