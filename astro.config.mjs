@@ -1,7 +1,10 @@
 import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  // Build a static site by default to avoid requiring a server adapter.
+  vite: {
+    plugins: [tailwindcss()],
+  },
   output: "static",
 });
