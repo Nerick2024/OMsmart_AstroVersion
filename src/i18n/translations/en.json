@@ -1,13 +1,41 @@
 {
-  "welcome": {
-    "header": "Welcome to Astro",
-    "subhead": "To get started, open the directory src/pages in your project.Code Challenge: Tweak the \"Welcome to Astro\" message above.",
-    "text_with_tags": "Hi, <0/> Welcome Home!",
-    "interpolate": " How <0>Great is this</0> text in  the line <1>Find out</1>"
-  },
-  "nav": {
-    "home": "Home",
-    "contact": "Contact us",
-    "about": "About us"
+  "NAVBAR": {
+    "SMART_ECOSYSTEM": "Smart Ecosystem",
+    "SMART_ECOSYSTEM_ITEMS":[
+      {
+        "HREF":"",
+        "TITLE":"Smart Governance",
+        "SUBTITLE":"Digital Government and Transparency."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Smart Economy",
+        "SUBTITLE":"Financing and Business Models."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Smart Mobility and Infrastructure",
+        "SUBTITLE":"Connected Mobility and Infrastructure."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Smart Environment",
+        "SUBTITLE":"Sustainability and ESG Services."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Smart Habitat and Services",
+        "SUBTITLE":"Security and Quality of Life."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Smart Society",
+        "SUBTITLE":"Society and Digital Inclusion."
+      }
+    ],
+    "ABOUT_US": "About Us",
+    "CONTACT": "Contact",
+    "BLOG":"Blog",
+    "INFORMATION":"Receive more information"
   }
 }

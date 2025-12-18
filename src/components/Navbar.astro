@@ -1,147 +1,121 @@
 ---
+import { getLangFromUrl, useTranslation, translatedPathFor } from "@/i18n";
 import LanguagePicker from "@/i18n/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const i18n = await useTranslation(lang);
 ---
 
-<div
-  class="absolute z-999 w-38 h-17 top-10 left-[5%] max-[940px]:left-1/2 max-[940px]:-translate-x-1/2"
->
+<div class="flex flex-row items-center justify-center lg:justify-between gap-5 mt-10 mx-26">
   <div
-    class="os-animation"
+    class="h-17 w-max object-contain"
     data-os-animation="bounceIn"
     data-os-animation-delay=".7s"
   >
     <a href="index.html">
-      <img loading="lazy" src="/public/imagenes/logo.png" alt="Logo" />
+      <img loading="lazy" src="/imagenes/logo.png" alt="Logo" />
     </a>
   </div>
+  <nav
+    id="menu"
+    class="absolute z-999 top-12 right-[5%] h-11 lg:flex hidden items-center justify-end gap-6 text-white text-[18px] font-semibold max-[940px]:hidden"
+  >
+    <!-- ECOSISTEMA -->
+    <div class="relative group">
+      <a
+        href={`/${lang}/`}
+        class="relative z-30 transition-colors duration-500 hover:text-cyan-400 font-semibold"
+      >
+        {i18n.NAVBAR.SMART_ECOSYSTEM}
+      </a>
+
+      <!-- SUBMENU -->
+      <div
+        class="absolute left-0 top-full min-w-[320px] bg-[#050647]/90 p-[10px] rounded-[8px] shadow-[0_8px_20px_rgba(0,0,0,0.4)] flex flex-col gap-2 opacity-0 -translate-y-[6px] pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto z-20"
+      >
+        {
+          i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS.map((item) => (
+            <a
+              href={item.HREF}
+              class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+            >
+              <>
+                <strong>{item.TITLE}</strong>
+                <br />
+              </>
+              <span class="text-base font-medium text-gray-200">
+                {item.SUBTITLE}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <a
+      href="#somosom"
+      class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+      >{i18n.NAVBAR.ABOUT_US}</a
+    >
+    <a
+      href="#contacto"
+      class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+      >{i18n.NAVBAR.CONTACT}</a
+    >
+    <a
+      href="blog/"
+      class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+      >{i18n.NAVBAR.BLOG}</a
+    >
+    <LanguagePicker />
+    <a
+      href="blog/"
+      class="relative transition-colors duration-500 group text-cyan-400 hover:text-white duration-150 font-semibold flex flex-row items-center justify-center gap-4 border border-white/25 p-2 pl-4 rounded-full overflow-hidden"
+      >{i18n.NAVBAR.INFORMATION}
+      <span
+        class="bg-gradient-to-r from-[var(--color-title)] to-[var(--color-blue)] group-hover:from-white group-hover:to-white transition-all duration-1000 px-4 py-1 rounded-full"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5.5 rotate-90 fill-white group-hover:fill-[var(--color-blue)] transition-all duration-300 pointer-events-none"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+          ></path>
+        </svg>
+        <span
+          class="h-full w-0 -z-10 group-hover:w-full transition-all duration-400 absolute bg-gradient-to-l from-[var(--color-title)] to-[var(--color-blue)] top-0 left-0"
+        ></span>
+      </span>
+    </a>
+  </nav>
 </div>
 <nav
-  id="menu"
-  class="absolute z-999 top-12 right-[5%] h-11 md:flex hidden items-center justify-end gap-6 text-white text-[18px] font-semibold max-[940px]:hidden"
->
-  <!-- ECOSISTEMA -->
-  <div class="relative group">
-    <a
-      href="index.html"
-      class="relative z-30 transition-colors duration-500 hover:text-cyan-400 font-semibold"
-    >
-      Ecosistema Smart
-    </a>
-
-    <!-- SUBMENU -->
-    <div
-      class="absolute left-0 top-full min-w-[320px] bg-[#050647]/90 p-[10px] rounded-[8px] shadow-[0_8px_20px_rgba(0,0,0,0.4)] flex flex-col gap-2 opacity-0 -translate-y-[6px] pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto z-20"
-    >
-      <a
-        href="/seccion1.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Gobernanza Inteligente</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Gobierno Digital y Transparencia.
-        </span>
-      </a>
-
-      <a
-        href="/seccion3.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Economía Inteligente</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Financiación y Modelos de Negocio.
-        </span>
-      </a>
-
-      <a
-        href="/seccion5.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Movilidad e Infraestructura Inteligente</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Movilidad e Infraestructura Conectada.
-        </span>
-      </a>
-
-      <a
-        href="/seccion4.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Medio Ambiente Inteligente</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Sostenibilidad y Servicios ESG.
-        </span>
-      </a>
-
-      <a
-        href="/seccion6.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Hábitat y Servicios Inteligentes</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Seguridad y Calidad de Vida.
-        </span>
-      </a>
-
-      <a
-        href="/seccion2.html"
-        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
-      >
-        <strong>Sociedad Inteligente</strong><br />
-        <span class="text-base font-medium text-gray-200">
-          Sociedad e Inclusión Digital.
-        </span>
-      </a>
-    </div>
-  </div>
-
-  <!-- LINKS -->
-  <a
-    href="#somosom"
-    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
-    >Somos</a
-  >
-  <a
-    href="#contacto"
-    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
-    >Contacto</a
-  >
-  <a
-    href="blog/"
-    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
-    >Blog</a
-  >
-  <LanguagePicker />
-  <a
-    href="blog/"
-    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
-    >Recibe más informacion <img src="/icons/arrow.svg" class="bg-[#]" alt="arrow" /></a
-  >
-  <a href="registro.html"><img src="/imagenes/boton.png" alt="Registro" /></a>
-</nav>
-<nav
   id="menu2"
-  class="absolute z-[999] top-[130px] left-1/2 -translate-x-1/2 w-[400px] h-[46px] items-center justify-center gap-6 text-white text-[18px] font-semibold md:hidden flex"
+  class="absolute z-999 w-full h-11 items-center justify-center gap-4 text-white text-[18px] font-semibold lg:hidden flex"
 >
   <a
     href="#somos"
     class="hover:text-cyan-400 transition-colors font-semibold text-xs"
-    >Ecosistema Smart</a
+    >{i18n.NAVBAR.SMART_ECOSYSTEM}</a
   >
   <a
     href="#somosom"
-    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Somos</a
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs"
+    >{i18n.NAVBAR.ABOUT_US}</a
   >
   <a
     href="#contacto"
     class="hover:text-cyan-400 transition-colors font-semibold text-xs"
-    >Contacto</a
+    >{i18n.NAVBAR.CONTACT}</a
   >
   <a
     href="blog/"
-    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Blog</a
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs"
+    >{i18n.NAVBAR.BLOG}</a
   >
-  <a
-    href="eng/"
-    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Eng</a
-  >
+  <LanguagePicker />
 </nav>

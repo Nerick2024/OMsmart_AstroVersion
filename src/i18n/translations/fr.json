@@ -1,13 +1,41 @@
 {
-  "welcome": {
-    "header": "Bienvenue chez Astro.",
-    "subhead": "Pour commencer, ouvrez le répertoire src/pages dans votre projet.Défi de code : Modifiez le message \"Bienvenue chez Astro\" ci-dessus.",
-    "text_with_tags": "Salut, <0/> Bienvenue à la maison !",
-    "interpolate": "Que <0>formidable est ce</0> texte dans la ligne <1>Découvrir</1>"
-  },
-  "nav": {
-    "home": "Accueil",
-    "contact": "Contact us",
-    "about": "À propos us"
+  "NAVBAR": {
+    "SMART_ECOSYSTEM": "Écosystème Smart",
+    "SMART_ECOSYSTEM_ITEMS":[
+      {
+        "HREF":"",
+        "TITLE":"Gouvernance Intelligente",
+        "SUBTITLE":"Gouvernement Numérique et Transparence."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Économie Intelligente",
+        "SUBTITLE":"Financement et Modèles d’Affaires."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Mobilité et Infrastructure Intelligentes",
+        "SUBTITLE":"Mobilité et Infrastructure Connectées."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Environnement Intelligent",
+        "SUBTITLE":"Durabilité et Services ESG."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Habitat et Services Intelligents",
+        "SUBTITLE":"Sécurité et Qualité de Vie."
+      },
+      {
+        "HREF":"",
+        "TITLE":"Société Intelligente",
+        "SUBTITLE":"Société et Inclusion Numérique."
+      }
+    ],
+    "ABOUT_US": "À propos",
+    "CONTACT": "Contact",
+    "BLOG":"Blog",
+    "INFORMATION":"Recevez plus d’informations"
   }
 }
