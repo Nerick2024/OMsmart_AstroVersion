@@ -1,0 +1,147 @@
+---
+import LanguagePicker from "@/i18n/LanguagePicker.astro";
+---
+
+<div
+  class="absolute z-999 w-38 h-17 top-10 left-[5%] max-[940px]:left-1/2 max-[940px]:-translate-x-1/2"
+>
+  <div
+    class="os-animation"
+    data-os-animation="bounceIn"
+    data-os-animation-delay=".7s"
+  >
+    <a href="index.html">
+      <img loading="lazy" src="/public/imagenes/logo.png" alt="Logo" />
+    </a>
+  </div>
+</div>
+<nav
+  id="menu"
+  class="absolute z-999 top-12 right-[5%] h-11 md:flex hidden items-center justify-end gap-6 text-white text-[18px] font-semibold max-[940px]:hidden"
+>
+  <!-- ECOSISTEMA -->
+  <div class="relative group">
+    <a
+      href="index.html"
+      class="relative z-30 transition-colors duration-500 hover:text-cyan-400 font-semibold"
+    >
+      Ecosistema Smart
+    </a>
+
+    <!-- SUBMENU -->
+    <div
+      class="absolute left-0 top-full min-w-[320px] bg-[#050647]/90 p-[10px] rounded-[8px] shadow-[0_8px_20px_rgba(0,0,0,0.4)] flex flex-col gap-2 opacity-0 -translate-y-[6px] pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto z-20"
+    >
+      <a
+        href="/seccion1.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Gobernanza Inteligente</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Gobierno Digital y Transparencia.
+        </span>
+      </a>
+
+      <a
+        href="/seccion3.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Economía Inteligente</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Financiación y Modelos de Negocio.
+        </span>
+      </a>
+
+      <a
+        href="/seccion5.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Movilidad e Infraestructura Inteligente</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Movilidad e Infraestructura Conectada.
+        </span>
+      </a>
+
+      <a
+        href="/seccion4.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Medio Ambiente Inteligente</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Sostenibilidad y Servicios ESG.
+        </span>
+      </a>
+
+      <a
+        href="/seccion6.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Hábitat y Servicios Inteligentes</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Seguridad y Calidad de Vida.
+        </span>
+      </a>
+
+      <a
+        href="/seccion2.html"
+        class="block p-2 rounded-md hover:bg-cyan-400/10 hover:text-cyan-400"
+      >
+        <strong>Sociedad Inteligente</strong><br />
+        <span class="text-base font-medium text-gray-200">
+          Sociedad e Inclusión Digital.
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <a
+    href="#somosom"
+    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+    >Somos</a
+  >
+  <a
+    href="#contacto"
+    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+    >Contacto</a
+  >
+  <a
+    href="blog/"
+    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+    >Blog</a
+  >
+  <LanguagePicker />
+  <a
+    href="blog/"
+    class="transition-colors duration-500 hover:text-cyan-400 font-semibold"
+    >Recibe más informacion <img src="/icons/arrow.svg" class="bg-[#]" alt="arrow" /></a
+  >
+  <a href="registro.html"><img src="/imagenes/boton.png" alt="Registro" /></a>
+</nav>
+<nav
+  id="menu2"
+  class="absolute z-[999] top-[130px] left-1/2 -translate-x-1/2 w-[400px] h-[46px] items-center justify-center gap-6 text-white text-[18px] font-semibold md:hidden flex"
+>
+  <a
+    href="#somos"
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs"
+    >Ecosistema Smart</a
+  >
+  <a
+    href="#somosom"
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Somos</a
+  >
+  <a
+    href="#contacto"
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs"
+    >Contacto</a
+  >
+  <a
+    href="blog/"
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Blog</a
+  >
+  <a
+    href="eng/"
+    class="hover:text-cyan-400 transition-colors font-semibold text-xs">Eng</a
+  >
+</nav>

@@ -1,46 +1,67 @@
 ---
 import "../style/global.css";
-import Nav from "@/components/Nav.astro";
+import Navbar from "@/components/Navbar.astro";
 import { getLangFromUrl } from "@/i18n";
 const lang = getLangFromUrl(Astro.url);
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Nav />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			#da62c4 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #f6f6f6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:300,900|Titillium+Web:400,600,700&display=swap");
+
+  :root{
+	--color-title:#00ffff;
+	--color-text:#ffff;
+	--color-text2:#d5d5d5;
+	--color-blue:#00aaff;
+	--color-bg-1:#000b65;
+	--color-bg-2:#011377;
+	--color-bg-3:#050653;
+	--color-bg-subtitle:#0b0c48;
+  }
+  html,
+  body {
+    font-family: "Titillium Web", sans-serif;
+    background-color: #000000;
+  }
+
+  /* TÍTULOS */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* TEXTO NORMAL */
+  p,
+  span,
+  li,
+  a,
+  button,
+  input,
+  textarea {
+    font-family: "Titillium Web", sans-serif;
+  }
 </style>

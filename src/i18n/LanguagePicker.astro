@@ -20,10 +20,10 @@ for (const [l] of Object.entries(locales)) {
 const ROUTE_KEYS = Array.from(routeKeys);
 ---
 
-<select name="language" id="i18n-language-picker">
+<select name="language" id="i18n-language-picker" class="font-semibold">
   {
     Object.entries(locales).map(([lang, label]) => (
-      <option value={lang}>{label}</option>
+      <option class="text-black" value={lang}>{label}</option>
     ))
   }
 </select>
