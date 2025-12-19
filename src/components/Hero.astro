@@ -1,19 +1,90 @@
-<main class="hero">
+---
+import { getLangFromUrl, useTranslation } from "@/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const i18n = await useTranslation(lang);
+
+const smartEcosystemItems = i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS;
+const currentYear = new Date().getFullYear();
+
+const nodeLayouts = [
+  // 01. Gobernanza (Izquierda Arriba)
+  {
+    transform: "translate(119.474, 200)",
+    gClass: "group left cursor-pointer item",
+    foProps: { x: -200, y: -50, width: 200, height: 100 },
+    divClass: "flex flex-col justify-center h-full text-center",
+  },
+  // 02. Economía (Arriba)
+  {
+    transform: "translate(310, 90)",
+    gClass: "group cursor-pointer item up",
+    foProps: { x: -100, y: -135, width: 200, height: 100 },
+    divClass: "flex flex-col justify-end h-full text-center",
+  },
+  // 03. Movilidad (Derecha Arriba)
+  {
+    transform: "translate(500.526, 200)",
+    gClass: "group right cursor-pointer item",
+    foProps: { x: 0, y: -50, width: 200, height: 100 },
+    divClass: "flex flex-col justify-center h-full text-center",
+  },
+  // 04. Medio Ambiente (Derecha Abajo)
+  {
+    transform: "translate(500.526, 420)",
+    gClass: "group right cursor-pointer item",
+    foProps: { x: 0, y: -50, width: 200, height: 100 },
+    divClass: "flex flex-col justify-center h-full text-center",
+  },
+  // 05. Hábitat (Abajo)
+  {
+    transform: "translate(310, 530)",
+    gClass: "group cursor-pointer item down",
+    foProps: { x: -100, y: 35, width: 200, height: 100 },
+    divClass: "text-center",
+  },
+  // 06. Sociedad (Izquierda Abajo)
+  {
+    transform: "translate(119.474, 420)",
+    gClass: "group left cursor-pointer item",
+    foProps: { x: -200, y: -50, width: 200, height: 100 },
+    divClass: "flex flex-col justify-center h-full text-center",
+  },
+];
+---
+
+<main class="relative flex justify-center items-center h-screen overflow-hidden">
   <!-- BACKGROUND -->
-  <div class="bg-video">
+  <div class="-z-20 fixed inset-0 w-full h-full overflow-hidden">
     <video
       id="bg-video"
-      src="../public/video/video.mp4"
+      class="border-0 w-full h-full object-cover pointer-events-none"
+      src="/video/video.mp4"
       autoplay
       muted
       loop
       playsinline></video>
   </div>
 
-  <div class="diagram" role="img">
-    <svg viewBox="0 0 620 620">
+  <div
+    class="top-1/2 left-1/2 absolute w-screen h-[700px] -translate-x-1/2 -translate-y-1/2 diagram"
+  >
+    <svg class="w-full h-full overflow-visible" viewBox="0 0 620 620">
+      <defs>
+        <mask id="nodes-mask">
+          <rect width="100%" height="100%" fill="white"></rect>
+          <circle cx="310" cy="90" r="12" fill="black"></circle>
+          <circle cx="500.526" cy="200" r="12" fill="black"></circle>
+          <circle cx="500.526" cy="420" r="12" fill="black"></circle>
+          <circle cx="310" cy="530" r="12" fill="black"></circle>
+          <circle cx="119.474" cy="420" r="12" fill="black"></circle>
+          <circle cx="119.474" cy="200" r="12" fill="black"></circle>
+        </mask>
+      </defs>
+
       <polygon
         class="poly"
+        mask="url(#nodes-mask)"
         points="
       310,90
       500.526,200
@@ -24,202 +95,138 @@
     "
       ></polygon>
 
-      <!-- ARRIBA -->
-      <g class="item up" transform="translate(310,90)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">02.</text>
-          <text class="label" dy="16">Economía</text>
-          <text class="sublabel" dy="32">Inteligente</text>
-        </g>
-      </g>
-
-      <!-- DERECHA ARRIBA -->
-      <g class="item right" transform="translate(500.526,200)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">03.</text>
-          <text class="label" dy="16">Movilidad e</text>
-          <text class="label" dy="32">Infraestructuras</text>
-          <text class="sublabel" dy="48">Inteligentes</text>
-        </g>
-      </g>
-
-      <!-- DERECHA ABAJO -->
-      <g class="item right" transform="translate(500.526,420)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">04.</text>
-          <text class="label" dy="16">Medio Ambiente</text>
-          <text class="sublabel" dy="32">Inteligente</text>
-        </g>
-      </g>
-
-      <!-- ABAJO -->
-      <g class="item down" transform="translate(310,530)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">05.</text>
-          <text class="label" dy="16">Hábitat y Servicios</text>
-          <text class="sublabel" dy="32">Inteligentes</text>
-        </g>
-      </g>
-
-      <!-- IZQUIERDA ABAJO -->
-      <g class="item left" transform="translate(119.474,420)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">06.</text>
-          <text class="label" dy="16">Sociedad</text>
-          <text class="sublabel" dy="32">Inteligente</text>
-        </g>
-      </g>
-
-      <!-- IZQUIERDA ARRIBA -->
-      <g class="item left" transform="translate(119.474,200)">
-        <circle r="7" class="node"></circle>
-        <g class="text">
-          <text class="num">01.</text>
-          <text class="label" dy="16">Gobernanza</text>
-          <text class="sublabel" dy="32">Inteligente</text>
-        </g>
-      </g>
+      <!-- NODOS DINÁMICOS -->
+      {
+        smartEcosystemItems.map((item, index) => {
+          const layout = nodeLayouts[index];
+          return (
+            <g class={layout.gClass} transform={layout.transform}>
+              <circle class="outer-node" r="12" />
+              <circle class="inner-node" r="5" />
+              <foreignObject {...layout.foProps}>
+                <div class={layout.divClass}>
+                  <span class="font-bold text-[#bdbdbd] text-[11px]">
+                    0{index + 1}.
+                  </span>
+                  <span
+                    class="block text-[13px] text-white"
+                    set:html={item.TITLE}
+                  />
+                </div>
+              </foreignObject>
+            </g>
+          );
+        })
+      }
 
       <!-- CENTRO -->
       <g transform="translate(310,310)" text-anchor="middle">
-        <text class="center-sub" y="-10">Implementación</text>
-        <text class="center-title" y="36">Smart City</text>
+        <text class="fill-[#bdbdbd] text-[30px]" y="-10"
+          >{i18n.HERO.CENTER_SUBTITLE}</text
+        >
+        <text class="fill-white font-extrabold text-[56px]" y="36"
+          >{i18n.HERO.CENTER_TITLE}</text
+        >
       </g>
     </svg>
   </div>
-  <div class="bottom-left" aria-hidden="true">
-    <div class="guidance">+ Guidance on regulatory implementation</div>
-    <div class="pill">cities and communities →</div>
-  </div>
 
-  <div class="social" aria-hidden="true">
-    <a href="#">f</a>
-    <a href="#">t</a>
-    <a href="#">ig</a>
-    <a href="#">in</a>
-  </div>
+  <footer class="bottom-0 absolute px-28 py-12 w-full text-white">
+    <div class="items-end grid grid-cols-3">
+      <!-- Columna Izquierda -->
+      <div class="flex flex-col justify-center items-start gap-6 w-fit">
+        <p class="w-fit font-semibold text-cyan-400 text-xl text-left">
+          <span class="font-extrabold">+</span> {i18n.HERO.FOOTER_LEFT_LINE1}
+          <br />
+          {i18n.HERO.FOOTER_LEFT_LINE2}
+        </p>
+        <a
+          href="/#somos"
+          class="group flex justify-between items-center gap-4 bg-white px-6 py-3 rounded-full w-fit font-bold text-black text-lg"
+        >
+          {i18n.HERO.FOOTER_LEFT_BUTTON}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="fill-black h-6 rotate-90 transition-all group-hover:animate-bounce"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+            ></path>
+          </svg>
+        </a>
+      </div>
 
-  <div class="scroll" aria-hidden="true"></div>
+      <!-- Columna Central -->
+      <div class="flex justify-center animate-bounce duration-1000">
+        <a href="/#somos" class="px-0.5 py-4 border-[1.8px] rounded-full">
+          <img
+            src="/icons/arrow.svg"
+            alt="arrow"
+            class="w-8 h-auto object-contain rotate-180"
+          />
+        </a>
+      </div>
+
+      <!-- Columna Derecha -->
+      <div class="flex flex-row items-center justify-end gap-6">
+        <p class="font-light text-sm">{i18n.HERO.FOOTER_RIGHT_TEXT}</p>
+        <div class="flex items-center gap-3">
+         {i18n.NETWORKS.map(item=>(
+           <a href={item.HREF} class="hover:scale-110 transition-all">
+             <img src={item.IMG}alt={item.TITLE} class="h-10 w-auto" />
+           </a>
+         ))}
+        </div>
+      </div>
+    </div>
+    <div class="flex items-center justify-start gap-6 mt-8">
+      <p class="text-sm">Copyright © OM SMART {currentYear}</p>
+    </div>
+  </footer>
 </main>
 
 <style>
-    .bg-video {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    overflow: hidden;
-  }
-  .bg-video iframe,
-  .bg-video video {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    pointer-events: none;
-    object-fit: cover;
-  }
-
-  /* HERO */
-  .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .diagram {
-    --gap-up: 70px;
-    --gap-down: 40px;
-    --gap-left: 80px;
-    --gap-right: 80px;
-
-    width: 100vw;
-    height: 700px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
   .poly {
     fill: none;
     stroke: rgba(255, 255, 255, 0.18);
     stroke-width: 1.6;
   }
 
-  .node {
+  @keyframes blink {
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .outer-node {
     fill: transparent;
     stroke: rgba(255, 255, 255, 0.9);
-    stroke-width: 1.6;
+    stroke-width: 1.6px;
+    transition: stroke 0.3s ease;
   }
 
-  .text {
-    text-anchor: middle;
-    pointer-events: none;
+  .inner-node {
+    fill: rgba(255, 255, 255, 0.9);
+    animation: blink 1.5s infinite ease-in-out;
+    transition:
+      r 0.3s ease,
+      fill 0.3s ease;
   }
 
-  /* separación dinámica por dirección */
-  .item.up .text {
-    transform: translate(0, calc(-1 * var(--gap-up)));
-  }
-  .item.down .text {
-    transform: translate(0, var(--gap-down));
-  }
-  .item.left .text {
-    transform: translate(calc(-1 * var(--gap-left)), 0);
-    text-anchor: center;
-  }
-  .item.right .text {
-    transform: translate(var(--gap-right), 0);
-    text-anchor: center;
+  .item:hover .inner-node {
+    animation: none;
+    r: 12;
+    fill: var(--color-title);
   }
 
-  /* FIX baseline SVG (CRÍTICO PARA ARRIBA) */
-  .item.up .text text {
-    dominant-baseline: hanging;
+  .item:hover .outer-node {
+    stroke: transparent;
   }
 
-  /* tipografía */
-  .num {
-    fill: #bdbdbd;
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  .label {
-    fill: #fff;
-    font-size: 13px;
-    font-weight: 800;
-  }
-
-  .sublabel {
-    fill: #cfcfcf;
-    font-size: 11px;
-    font-weight: 600;
-  }
-
-  /* centro */
-  .center-sub {
-    fill: #bdbdbd;
-    font-size: 30px;
-  }
-
-  .center-title {
-    fill: #fff;
-    font-size: 56px;
-    font-weight: 800;
+  strong {
+    font-weight: 800; /* font-extrabold */
+    font-size: 14px; /* text-[14px] */
   }
 </style>
