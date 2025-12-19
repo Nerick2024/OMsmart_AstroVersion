@@ -1,35 +1,42 @@
 {
   "NAVBAR": {
     "SMART_ECOSYSTEM": "Smart Ecosystem",
+    "SMART": "Smart",
     "SMART_ECOSYSTEM_ITEMS":[
       {
         "HREF":"",
-        "TITLE":"Smart Governance",
+        "TITLE":"<strong>Smart</strong><br>Governance",
+        "TITLE_NAV": "Smart Governance",
         "SUBTITLE":"Digital Government and Transparency."
       },
       {
         "HREF":"",
-        "TITLE":"Smart Economy",
+        "TITLE":"<strong>Smart</strong><br>Economy",
+        "TITLE_NAV": "Smart Economy",
         "SUBTITLE":"Financing and Business Models."
       },
       {
         "HREF":"",
-        "TITLE":"Smart Mobility and Infrastructure",
+        "TITLE":"<strong>Smart</strong><br>Mobility and<br>Infrastructure",
+        "TITLE_NAV": "Smart Mobility and Infrastructure",
         "SUBTITLE":"Connected Mobility and Infrastructure."
       },
       {
         "HREF":"",
-        "TITLE":"Smart Environment",
+        "TITLE":"<strong>Smart</strong><br>Environment",
+        "TITLE_NAV": "Smart Environment",
         "SUBTITLE":"Sustainability and ESG Services."
       },
       {
         "HREF":"",
-        "TITLE":"Smart Habitat and Services",
+        "TITLE":"<strong>Smart</strong><br>Habitat and<br>Services",
+        "TITLE_NAV": "Smart Habitat and Services",
         "SUBTITLE":"Security and Quality of Life."
       },
       {
         "HREF":"",
-        "TITLE":"Smart Society",
+        "TITLE":"<strong>Smart</strong><br>Society",
+        "TITLE_NAV": "Smart Society",
         "SUBTITLE":"Society and Digital Inclusion."
       }
     ],
@@ -37,5 +44,35 @@
     "CONTACT": "Contact",
     "BLOG":"Blog",
     "INFORMATION":"Receive more information"
-  }
+  },
+  "HERO": {
+    "CENTER_SUBTITLE": "Implementation",
+    "CENTER_TITLE": "Smart City",
+    "FOOTER_LEFT_LINE1": "Guidance in",
+    "FOOTER_LEFT_LINE2": "regulatory implementation",
+    "FOOTER_LEFT_BUTTON": "cities and communities",
+    "FOOTER_RIGHT_TEXT": "Follow us on"
+  },
+    "NETWORKS":[
+    {
+      "IMG":"/icons/networks/facebook.png",
+      "TITLE":"FACEBOOK",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/twitter.png",
+      "TITLE":"TWITTER",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/instagram.png",
+      "TITLE":"INSTAGRAM",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/linkedin.png",
+      "TITLE":"LINKEDIN",
+      "HREF":""
+    }
+  ]
 }

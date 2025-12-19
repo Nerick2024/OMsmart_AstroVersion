@@ -1,35 +1,42 @@
 {
   "NAVBAR": {
     "SMART_ECOSYSTEM": "Ecosistema Smart",
+    "SMART": "Inteligente",
     "SMART_ECOSYSTEM_ITEMS":[
       {
         "HREF":"",
-        "TITLE":"Gobernanza Inteligente",
+        "TITLE":"<strong>Gobernanza</strong><br>Inteligente",
+        "TITLE_NAV": "Gobernanza Inteligente",
         "SUBTITLE":"Gobierno Digital y Transparencia."
       },
       {
         "HREF":"",
-        "TITLE":"Economía Inteligente",
+        "TITLE":"<strong>Economía</strong><br>Inteligente",
+        "TITLE_NAV": "Economía Inteligente",
         "SUBTITLE":"Financiación y Modelos de Negocio."
       },
       {
         "HREF":"",
-        "TITLE":"Movilidad e Infraestructura Inteligente",
+        "TITLE":"<strong>Movilidad e<br>Infraestructuras</strong><br>Inteligentes",
+        "TITLE_NAV": "Movilidad e Infraestructuras Inteligentes",
         "SUBTITLE":"Movilidad e Infraestructura Conectada."
       },
       {
         "HREF":"",
-        "TITLE":"Medio Ambiente Inteligente",
+        "TITLE":"<strong>Medio Ambiente</strong><br>Inteligente",
+        "TITLE_NAV": "Medio Ambiente Inteligente",
         "SUBTITLE":"Sostenibilidad y Servicios ESG."
       },
       {
         "HREF":"",
-        "TITLE":"Hábitat y Servicios Inteligentes",
+        "TITLE":"<strong>Hábitat y Servicios</strong><br>Intelligentes",
+        "TITLE_NAV": "Hábitat y Servicios Intelligentes",
         "SUBTITLE":"Seguridad y Calidad de Vida."
       },
       {
         "HREF":"",
-        "TITLE":"Sociedad Inteligente",
+        "TITLE":"<strong>Sociedad</strong><br>Inteligente",
+        "TITLE_NAV": "Sociedad Inteligente",
         "SUBTITLE":"Sociedad e Inclusión Digital."
       }
     ],
@@ -37,5 +44,35 @@
     "CONTACT": "Contacto",
     "BLOG":"Blog",
     "INFORMATION":"Recibe más informacion"
-  }
+  },
+  "HERO": {
+    "CENTER_SUBTITLE": "Implementación",
+    "CENTER_TITLE": "Smart City",
+    "FOOTER_LEFT_LINE1": "Orientación en",
+    "FOOTER_LEFT_LINE2": "implementación normativa",
+    "FOOTER_LEFT_BUTTON": "ciudades y comunidades",
+    "FOOTER_RIGHT_TEXT": "Síguenos en"
+  },
+    "NETWORKS":[
+    {
+      "IMG":"/icons/networks/facebook.png",
+      "TITLE":"FACEBOOK",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/twitter.png",
+      "TITLE":"TWITTER",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/instagram.png",
+      "TITLE":"INSTAGRAM",
+      "HREF":""
+    },
+    {
+      "IMG":"/icons/networks/linkedin.png",
+      "TITLE":"LINKEDIN",
+      "HREF":""
+    }
+  ]
 }
