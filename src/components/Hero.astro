@@ -8,42 +8,36 @@ const smartEcosystemItems = i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS;
 const currentYear = new Date().getFullYear();
 
 const nodeLayouts = [
-  // 01. Gobernanza (Izquierda Arriba)
   {
     transform: "translate(119.474, 200)",
     gClass: "group left cursor-pointer item",
     foProps: { x: -200, y: -50, width: 200, height: 100 },
     divClass: "flex flex-col justify-center h-full text-center",
   },
-  // 02. Economía (Arriba)
   {
     transform: "translate(310, 90)",
     gClass: "group cursor-pointer item up",
     foProps: { x: -100, y: -135, width: 200, height: 100 },
     divClass: "flex flex-col justify-end h-full text-center",
   },
-  // 03. Movilidad (Derecha Arriba)
   {
     transform: "translate(500.526, 200)",
     gClass: "group right cursor-pointer item",
     foProps: { x: 0, y: -50, width: 200, height: 100 },
     divClass: "flex flex-col justify-center h-full text-center",
   },
-  // 04. Medio Ambiente (Derecha Abajo)
   {
     transform: "translate(500.526, 420)",
     gClass: "group right cursor-pointer item",
     foProps: { x: 0, y: -50, width: 200, height: 100 },
     divClass: "flex flex-col justify-center h-full text-center",
   },
-  // 05. Hábitat (Abajo)
   {
     transform: "translate(310, 530)",
     gClass: "group cursor-pointer item down",
     foProps: { x: -100, y: 35, width: 200, height: 100 },
     divClass: "text-center",
   },
-  // 06. Sociedad (Izquierda Abajo)
   {
     transform: "translate(119.474, 420)",
     gClass: "group left cursor-pointer item",
@@ -53,7 +47,9 @@ const nodeLayouts = [
 ];
 ---
 
-<main class="relative flex justify-center items-center h-screen overflow-hidden">
+<main
+  class="relative lg:flex justify-center items-center h-screen min-h-screen overflow-hidden"
+>
   <!-- BACKGROUND -->
   <div class="-z-20 fixed inset-0 w-full h-full overflow-hidden">
     <video
@@ -66,8 +62,9 @@ const nodeLayouts = [
       playsinline></video>
   </div>
 
+  <!-- DESKTOP VIEW -->
   <div
-    class="top-1/2 left-1/2 absolute w-screen h-[700px] -translate-x-1/2 -translate-y-1/2 diagram"
+    class="hidden lg:block top-1/2 left-1/2 absolute w-screen h-[700px] -translate-x-1/2 -translate-y-1/2 diagram"
   >
     <svg class="w-full h-full overflow-visible" viewBox="0 0 620 620">
       <defs>
@@ -81,21 +78,11 @@ const nodeLayouts = [
           <circle cx="119.474" cy="200" r="12" fill="black"></circle>
         </mask>
       </defs>
-
       <polygon
         class="poly"
         mask="url(#nodes-mask)"
-        points="
-      310,90
-      500.526,200
-      500.526,420
-      310,530
-      119.474,420
-      119.474,200
-    "
+        points="310,90 500.526,200 500.526,420 310,530 119.474,420 119.474,200"
       ></polygon>
-
-      <!-- NODOS DINÁMICOS -->
       {
         smartEcosystemItems.map((item, index) => {
           const layout = nodeLayouts[index];
@@ -118,8 +105,6 @@ const nodeLayouts = [
           );
         })
       }
-
-      <!-- CENTRO -->
       <g transform="translate(310,310)" text-anchor="middle">
         <text class="fill-[#bdbdbd] text-[30px]" y="-10"
           >{i18n.HERO.CENTER_SUBTITLE}</text
@@ -130,62 +115,109 @@ const nodeLayouts = [
       </g>
     </svg>
   </div>
-
-  <div class="bottom-0 absolute px-28 w-full text-white">
-    <div class="items-end grid grid-cols-3">
-      <!-- Columna Izquierda -->
-      <div class="flex flex-col justify-center items-center gap-6 w-fit">
-        <p class="w-fit font-semibold text-cyan-400 text-xl text-center">
-          <span class="font-extrabold">+</span> {i18n.HERO.FOOTER_LEFT_LINE1}
-          <br />
-          {i18n.HERO.FOOTER_LEFT_LINE2}
-        </p>
-        <a
-          href="/#somos"
-          class="group flex justify-between items-center gap-4 bg-white px-6 py-3 rounded-full w-fit font-bold text-black text-lg"
+  <div
+    class="hidden bottom-0 absolute items-end lg:grid grid-cols-3 px-28 w-full text-white"
+  >
+    <div class="flex flex-col justify-center items-center gap-6 w-fit">
+      <p class="w-fit font-semibold text-cyan-400 text-xl text-center">
+        <span class="font-extrabold">+</span>
+        {i18n.HERO.FOOTER_LEFT_LINE1}<br />{i18n.HERO.FOOTER_LEFT_LINE2}
+      </p>
+      <a
+        href="/#somos"
+        class="group flex justify-between items-center gap-4 bg-white px-6 py-3 rounded-full w-fit font-bold text-black text-lg"
+      >
+        {i18n.HERO.FOOTER_LEFT_BUTTON}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="fill-black h-6 rotate-90 transition-all group-hover:animate-bounce"
+          viewBox="0 0 16 16"
         >
-          {i18n.HERO.FOOTER_LEFT_BUTTON}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="fill-black h-6 rotate-90 transition-all group-hover:animate-bounce"
-            viewBox="0 0 16 16"
+          <path
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
+          ></path>
+        </svg>
+      </a>
+    </div>
+    <div class="flex justify-center animate-bounce duration-1000">
+      <a href="/#somos" class="px-0.5 py-4 border-[1.8px] rounded-full">
+        <img
+          src="/icons/arrow.svg"
+          alt="arrow"
+          class="w-8 h-auto object-contain rotate-180"
+        />
+      </a>
+    </div>
+    <div class="flex flex-row justify-end items-center gap-6">
+      <p class="font-light text-sm">{i18n.HERO.FOOTER_RIGHT_TEXT}</p>
+      <div class="flex items-center gap-3">
+        {
+          i18n.NETWORKS.map((item) => (
+            <a href={item.HREF} class="hover:scale-110 transition-all">
+              <img src={item.IMG} alt={item.TITLE} class="w-auto h-10" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE/TABLET VIEW -->
+  <div
+    class="lg:hidden flex flex-col justify-center items-center m-auto pt-12 px-10 w-full h-screen text-white"
+  >
+    <h1 class="font-light text-gray-300 text-3xl text-center">
+      {i18n.HERO.CENTER_SUBTITLE}
+    </h1>
+    <h2 class="mt-1 mb-10 font-semibold text-5xl text-center">
+      {i18n.HERO.CENTER_TITLE}
+    </h2>
+    <div class="flex flex-col gap-4 w-full max-w-md">
+      {
+        smartEcosystemItems.map((item) => (
+          <a
+            href={item.HREF || "#"}
+            class="block bg-black/25 hover:bg-white/10 bg-opacity-25 backdrop-blur-sm px-5 py-2.5 border border-white/20 rounded-full font-semibold text-center transition-colors duration-300"
           >
-            <path
-              fill-rule="evenodd"
-              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
-            ></path>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Columna Central -->
-      <div class="flex justify-center animate-bounce duration-1000">
-        <a href="/#somos" class="px-0.5 py-4 border-[1.8px] rounded-full">
-          <img
-            src="/icons/arrow.svg"
-            alt="arrow"
-            class="w-8 h-auto object-contain rotate-180"
-          />
-        </a>
-      </div>
-
-      <!-- Columna Derecha -->
-      <div class="flex flex-row items-center justify-end gap-6">
-        <p class="font-light text-sm">{i18n.HERO.FOOTER_RIGHT_TEXT}</p>
-        <div class="flex items-center gap-3">
-         {i18n.NETWORKS.map(item=>(
-           <a href={item.HREF} class="hover:scale-110 transition-all">
-             <img src={item.IMG}alt={item.TITLE} class="h-10 w-auto" />
-           </a>
-         ))}
-        </div>
+            {item.TITLE_NAV}
+          </a>
+        ))
+      }
+    </div>
+    <div class="flex flex-col items-center gap-6 mt-5 text-center">
+      <p class="font-semibold text-cyan-400 text-base">
+        <span class="font-extrabold">+</span>
+        {i18n.HERO.FOOTER_LEFT_LINE1}<br />{i18n.HERO.FOOTER_LEFT_LINE2}
+      </p>
+      <a
+        href="/#somos"
+        class="group flex items-center gap-3 bg-white px-8 py-3 rounded-full w-fit font-bold text-black text-lg"
+      >
+        {i18n.HERO.FOOTER_LEFT_BUTTON}
+        <span
+          class="font-bold text-xl transition-transform group-hover:translate-x-1"
+          >→</span>
+      </a>
+    </div>
+    <div class="mt-5 text-center">
+      <p class="mb-4 font-light text-sm">{i18n.HERO.FOOTER_RIGHT_TEXT}</p>
+      <div class="flex justify-center items-center gap-4">
+        {
+          i18n.NETWORKS.map((item) => (
+            <a href={item.HREF} class="hover:scale-110 transition-all">
+              <img src={item.IMG} alt={item.TITLE} class="w-auto h-9" />
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
 </main>
-<div class="flex px-28 items-center justify-start gap-6 mt-8">
-  <p class="text-sm text-white">Copyright © OM SMART {currentYear}</p>
-</div>
+
+<footer class="px-8 lg:px-28 py-4 lg:text-left text-center">
+  <p class="text-white/80 text-sm">Copyright © OM SMART {currentYear}</p>
+</footer>
 
 <style>
   .poly {
@@ -193,38 +225,32 @@ const nodeLayouts = [
     stroke: rgba(255, 255, 255, 0.18);
     stroke-width: 1.6;
   }
-
   @keyframes blink {
     50% {
       opacity: 0.3;
     }
   }
-
   .outer-node {
     fill: transparent;
     stroke: rgba(255, 255, 255, 0.9);
     stroke-width: 1.6px;
     transition: stroke 0.3s ease;
   }
-
   .inner-node {
     fill: rgba(255, 255, 255, 0.9);
-    animation: blink 1.5s infinite ease-in-out;
+    animation: blink 1s infinite ease-in-out;
     transition:
       r 0.3s ease,
       fill 0.3s ease;
   }
-
   .item:hover .inner-node {
     animation: none;
     r: 12;
     fill: var(--color-title);
   }
-
   .item:hover .outer-node {
     stroke: transparent;
   }
-
   strong {
     font-weight: 800; /* font-extrabold */
     font-size: 14px; /* text-[14px] */
