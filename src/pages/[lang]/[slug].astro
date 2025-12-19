@@ -7,8 +7,8 @@ export async function getStaticPaths() {
   const paths: any[] = [];
   for (const lang of Object.keys(translations)) {
     const t = await (translations as any)[lang]();
-    const aboutSlug = slugify(String(t?.nav?.about || "about"));
-    paths.push({ params: { lang, slug: aboutSlug } });
+    const aboutUsSlug = slugify(String(t?.NAVBAR?.ABOUT_US || "about-us"));
+    paths.push({ params: { lang, slug: aboutUsSlug } });
   }
   return paths;
 }
@@ -17,13 +17,13 @@ const lang = Astro.params.lang ?? defaultLang;
 const slug = Astro.params.slug as string | undefined;
 const t = await useTranslation(lang as any);
 
-const aboutSlug = slugify(String(t?.nav?.about || "about"));
-const isAbout = slug === aboutSlug;
+const aboutUsSlug = slugify(String(t?.NAVBAR?.ABOUT_US || "about-us"));
+const isAboutPage = slug === aboutUsSlug;
 ---
 
-{isAbout ? (
-  <Layout title="About">
-    <h1>{t.nav.about}</h1>
+{isAboutPage ? (
+  <Layout title={t.NAVBAR.ABOUT_US}>
+    <h1>{t.NAVBAR.ABOUT_US}</h1>
   </Layout>
 ) : (
   <Layout title="Not found">
