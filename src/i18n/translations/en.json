@@ -74,5 +74,12 @@
       "TITLE":"LINKEDIN",
       "HREF":""
     }
-  ]
+  ],
+  "CONTACT_FORM": {
+    "HEADING": "Contact us if you have questions or comments about the topic, or <span class=\"text-[var(--color-title)]\">register</span> to receive more information about smart cities.",
+    "NAME_PLACEHOLDER": "Name",
+    "EMAIL_PLACEHOLDER": "Mail",
+    "MESSAGE_PLACEHOLDER": "Message",
+    "SUBMIT_BUTTON": "Submit"
+  }
 }

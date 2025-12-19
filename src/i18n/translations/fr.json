@@ -68,5 +68,12 @@
       "TITLE":"LINKEDIN",
       "HREF":""
     }
-  ]
+  ],
+  "CONTACT_FORM": {
+    "HEADING": "Contactez-nous si vous avez des questions ou des commentaires sur le sujet, ou <span class=\"text-[var(--color-title)]\">inscrivez-vous</span> pour recevoir plus d’informations sur les villes intelligentes.",
+    "NAME_PLACEHOLDER": "Nom",
+    "EMAIL_PLACEHOLDER": "Mail",
+    "MESSAGE_PLACEHOLDER": "Message",
+    "SUBMIT_BUTTON": "Envoyer"
+  }
 }
