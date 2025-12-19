@@ -6,31 +6,37 @@
       {
         "HREF":"",
         "TITLE":"<strong>Gouvernance</strong><br>Intelligente",
+        "TITLE_NAV": "Gouvernance Intelligente",
         "SUBTITLE":"Gouvernement Numérique et Transparence."
       },
       {
         "HREF":"",
         "TITLE":"<strong>Économie</strong><br>Intelligente",
+        "TITLE_NAV": "Économie Intelligente",
         "SUBTITLE":"Financement et Modèles d’Affaires."
       },
       {
         "HREF":"",
         "TITLE":"<strong>Mobilité et<br>Infrastructure</strong><br>Intelligentes",
+        "TITLE_NAV": "Mobilité et Infrastructure Intelligentes",
         "SUBTITLE":"Mobilité et Infrastructure Connectées."
       },
       {
         "HREF":"",
         "TITLE":"<strong>Environnement</strong><br>Intelligent",
+        "TITLE_NAV": "Environnement Intelligent",
         "SUBTITLE":"Durabilité et Services ESG."
       },
       {
         "HREF":"",
         "TITLE":"<strong>Habitat et<br>Services</strong><br>Intelligents",
+        "TITLE_NAV": "Habitat et Services Intelligents",
         "SUBTITLE":"Sécurité et Qualité de Vie."
       },
       {
         "HREF":"",
         "TITLE":"<strong>Société</strong><br>Intelligente",
+        "TITLE_NAV": "Société Intelligente",
         "SUBTITLE":"Société et Inclusion Numérique."
       }
     ],
