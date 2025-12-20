@@ -2,48 +2,48 @@
   "NAVBAR": {
     "SMART_ECOSYSTEM": "Ecosistema Smart",
     "SMART": "Inteligente",
-    "SMART_ECOSYSTEM_ITEMS":[
+    "SMART_ECOSYSTEM_ITEMS": [
       {
-        "HREF":"",
-        "TITLE":"<strong>Gobernanza</strong><br>Inteligente",
+        "HREF": "",
+        "TITLE": "<strong>Gobernanza</strong><br>Inteligente",
         "TITLE_NAV": "Gobernanza Inteligente",
-        "SUBTITLE":"Gobierno Digital y Transparencia."
+        "SUBTITLE": "Gobierno Digital y Transparencia."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Economía</strong><br>Inteligente",
+        "HREF": "",
+        "TITLE": "<strong>Economía</strong><br>Inteligente",
         "TITLE_NAV": "Economía Inteligente",
-        "SUBTITLE":"Financiación y Modelos de Negocio."
+        "SUBTITLE": "Financiación y Modelos de Negocio."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Movilidad e<br>Infraestructuras</strong><br>Inteligentes",
+        "HREF": "",
+        "TITLE": "<strong>Movilidad e<br>Infraestructuras</strong><br>Inteligentes",
         "TITLE_NAV": "Movilidad e Infraestructuras Inteligentes",
-        "SUBTITLE":"Movilidad e Infraestructura Conectada."
+        "SUBTITLE": "Movilidad e Infraestructura Conectada."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Medio Ambiente</strong><br>Inteligente",
+        "HREF": "",
+        "TITLE": "<strong>Medio Ambiente</strong><br>Inteligente",
         "TITLE_NAV": "Medio Ambiente Inteligente",
-        "SUBTITLE":"Sostenibilidad y Servicios ESG."
+        "SUBTITLE": "Sostenibilidad y Servicios ESG."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Hábitat y Servicios</strong><br>Intelligentes",
+        "HREF": "",
+        "TITLE": "<strong>Hábitat y Servicios</strong><br>Intelligentes",
         "TITLE_NAV": "Hábitat y Servicios Intelligentes",
-        "SUBTITLE":"Seguridad y Calidad de Vida."
+        "SUBTITLE": "Seguridad y Calidad de Vida."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Sociedad</strong><br>Inteligente",
+        "HREF": "",
+        "TITLE": "<strong>Sociedad</strong><br>Inteligente",
         "TITLE_NAV": "Sociedad Inteligente",
-        "SUBTITLE":"Sociedad e Inclusión Digital."
+        "SUBTITLE": "Sociedad e Inclusión Digital."
       }
     ],
     "ABOUT_US": "Somos",
     "CONTACT": "Contacto",
-    "BLOG":"Blog",
-    "INFORMATION":"Recibe más informacion"
+    "BLOG": "Blog",
+    "INFORMATION": "Recibe más informacion"
   },
   "HERO": {
     "CENTER_SUBTITLE": "Implementación",
@@ -53,28 +53,37 @@
     "FOOTER_LEFT_BUTTON": "ciudades y comunidades",
     "FOOTER_RIGHT_TEXT": "Síguenos en"
   },
-    "NETWORKS":[
+  "NETWORKS": [
     {
-      "IMG":"/icons/networks/facebook.png",
-      "TITLE":"FACEBOOK",
-      "HREF":""
+      "IMG": "/icons/networks/facebook.png",
+      "TITLE": "FACEBOOK",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/twitter.png",
-      "TITLE":"TWITTER",
-      "HREF":""
+      "IMG": "/icons/networks/twitter.png",
+      "TITLE": "TWITTER",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/instagram.png",
-      "TITLE":"INSTAGRAM",
-      "HREF":""
+      "IMG": "/icons/networks/instagram.png",
+      "TITLE": "INSTAGRAM",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/linkedin.png",
-      "TITLE":"LINKEDIN",
-      "HREF":""
+      "IMG": "/icons/networks/linkedin.png",
+      "TITLE": "LINKEDIN",
+      "HREF": ""
     }
   ],
+  "ABOUT": {
+    "LABEL": "Smart City.",
+    "TITLE1": "Interacción y transformación urbana sostenible",
+    "TEXT1": "Un sistema holístico donde interactúan el capital humano y social, empleando soluciones basadas en TIC’s.",
+    "TITLE2": "El propósito de una Smart City es alcanzar una gestión eficiente",
+    "TEXT2": "satisfaciendo las necesidades de la ciudad y sus ciudadanos.",
+    "TITLE3": "Consultoría y asesoría en gestión de ciudades inteligentes",
+    "TEXT3": "Servicios nacionales e internacionales con enfoque ético, sustentable e innovador."
+  },
   "CONTACT_FORM": {
     "HEADING": "Contáctanos si tienes dudas o comentarios acerca del tema, o <span class=\"text-[var(--color-title)]\">regístrate</span> para recibir más información sobre las ciudades inteligentes.",
     "NAME_PLACEHOLDER": "Nombre",

@@ -1,6 +1,11 @@
 ---
 // file: tu-componente.astro (o donde lo tengas)
 import "../styles/nuevo.css";
+import { getLangFromUrl, useTranslation, translatedPathFor } from "@/i18n";
+import LanguagePicker from "@/i18n/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const i18n = await useTranslation(lang);
 ---
 
 <div
@@ -48,15 +53,15 @@ import "../styles/nuevo.css";
           data-anim="fadeInLeft"
           style="--delay:1s"
         >
-        <h2 class="font-normal text-[32px] text-white md:text-[45px] leading-[1.1]">
-          <span class="text-[var(--color-title)]">+ Smart City.</span>
-          Interacción y transformación urbana sostenible
-        </h2>
-        
+          <h2
+            class="font-normal text-[32px] text-white md:text-[45px] leading-[1.1]"
+          >
+            <span class="text-[var(--color-title)]">+ {i18n.ABOUT.LABEL}</span>
+            {i18n.ABOUT.TITLE1}
+          </h2>
 
           <p class="mt-6 font-light text-white text-lg leading-[150%]">
-            Un sistema holístico donde interactúan el capital humano y social,
-            empleando soluciones basadas en TIC’s.
+            {i18n.ABOUT.TEXT1}
           </p>
         </div>
       </div>
@@ -71,19 +76,19 @@ import "../styles/nuevo.css";
           data-anim="fadeInLeft"
           style="--delay:1s"
         >
-          <p class="font-semibold text-sm uppercase text-[var(--color-title)]">
-            ──────────── Smart City
+          <p class="font-semibold text-[var(--color-title)] text-sm uppercase">
+            ──────────── {i18n.ABOUT.LABEL}
           </p>
 
           <h2 class="mt-4 text-3xl leading-snug">
             <span class="text-[var(--color-title)]">+</span>
             <span class="text-white">
-              El propósito de una Smart City es alcanzar una gestión eficiente
+              {i18n.ABOUT.TITLE2}
             </span>
           </h2>
 
           <p class="mt-2 font-light text-white text-lg leading-[150%]">
-            satisfaciendo las necesidades de la ciudad y sus ciudadanos.
+            {i18n.ABOUT.TEXT2}
           </p>
         </div>
       </div>
@@ -98,18 +103,17 @@ import "../styles/nuevo.css";
           data-anim="fadeInLeft"
           style="--delay:1s"
         >
-          <p class="font-semibold text-sm uppercase text-[var(--color-title)]">
-            ──────────── Smart City
+          <p class="font-semibold text-[var(--color-title)] text-sm uppercase">
+            ──────────── {i18n.ABOUT.LABEL}
           </p>
 
           <h2 class="mt-4 text-white text-3xl leading-snug">
             <span class="text-[var(--color-title)]">+</span>
-            Consultoría y asesoría en gestión de ciudades inteligentes
+            {i18n.ABOUT.TITLE3}
           </h2>
 
           <p class="mt-2 font-light text-white text-lg leading-[150%]">
-            Servicios nacionales e internacionales con enfoque ético,
-            sustentable e innovador.
+            {i18n.ABOUT.TEXT3}
           </p>
         </div>
       </div>

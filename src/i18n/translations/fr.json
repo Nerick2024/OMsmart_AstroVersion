@@ -2,48 +2,48 @@
   "NAVBAR": {
     "SMART_ECOSYSTEM": "Écosystème Smart",
     "SMART": "Intelligent",
-    "SMART_ECOSYSTEM_ITEMS":[
+    "SMART_ECOSYSTEM_ITEMS": [
       {
-        "HREF":"",
-        "TITLE":"<strong>Gouvernance</strong><br>Intelligente",
+        "HREF": "",
+        "TITLE": "<strong>Gouvernance</strong><br>Intelligente",
         "TITLE_NAV": "Gouvernance Intelligente",
-        "SUBTITLE":"Gouvernement Numérique et Transparence."
+        "SUBTITLE": "Gouvernement Numérique et Transparence."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Économie</strong><br>Intelligente",
+        "HREF": "",
+        "TITLE": "<strong>Économie</strong><br>Intelligente",
         "TITLE_NAV": "Économie Intelligente",
-        "SUBTITLE":"Financement et Modèles d’Affaires."
+        "SUBTITLE": "Financement et Modèles d’Affaires."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Mobilité et<br>Infrastructure</strong><br>Intelligentes",
+        "HREF": "",
+        "TITLE": "<strong>Mobilité et<br>Infrastructure</strong><br>Intelligentes",
         "TITLE_NAV": "Mobilité et Infrastructure Intelligentes",
-        "SUBTITLE":"Mobilité et Infrastructure Connectées."
+        "SUBTITLE": "Mobilité et Infrastructure Connectées."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Environnement</strong><br>Intelligent",
+        "HREF": "",
+        "TITLE": "<strong>Environnement</strong><br>Intelligent",
         "TITLE_NAV": "Environnement Intelligent",
-        "SUBTITLE":"Durabilité et Services ESG."
+        "SUBTITLE": "Durabilité et Services ESG."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Habitat et<br>Services</strong><br>Intelligents",
+        "HREF": "",
+        "TITLE": "<strong>Habitat et<br>Services</strong><br>Intelligents",
         "TITLE_NAV": "Habitat et Services Intelligents",
-        "SUBTITLE":"Sécurité et Qualité de Vie."
+        "SUBTITLE": "Sécurité et Qualité de Vie."
       },
       {
-        "HREF":"",
-        "TITLE":"<strong>Société</strong><br>Intelligente",
+        "HREF": "",
+        "TITLE": "<strong>Société</strong><br>Intelligente",
         "TITLE_NAV": "Société Intelligente",
-        "SUBTITLE":"Société et Inclusion Numérique."
+        "SUBTITLE": "Société et Inclusion Numérique."
       }
     ],
     "ABOUT_US": "À propos",
     "CONTACT": "Contact",
-    "BLOG":"Blog",
-    "INFORMATION":"Recevez plus d’informations"
+    "BLOG": "Blog",
+    "INFORMATION": "Recevez plus d’informations"
   },
   "HERO": {
     "CENTER_SUBTITLE": "Implémentation",
@@ -53,30 +53,39 @@
     "FOOTER_LEFT_BUTTON": "villes et communautés",
     "FOOTER_RIGHT_TEXT": "Suivez-nous sur"
   },
-    "NETWORKS":[
+  "NETWORKS": [
     {
-      "IMG":"/icons/networks/facebook.png",
-      "TITLE":"FACEBOOK",
-      "HREF":""
+      "IMG": "/icons/networks/facebook.png",
+      "TITLE": "FACEBOOK",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/twitter.png",
-      "TITLE":"TWITTER",
-      "HREF":""
+      "IMG": "/icons/networks/twitter.png",
+      "TITLE": "TWITTER",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/instagram.png",
-      "TITLE":"INSTAGRAM",
-      "HREF":""
+      "IMG": "/icons/networks/instagram.png",
+      "TITLE": "INSTAGRAM",
+      "HREF": ""
     },
     {
-      "IMG":"/icons/networks/linkedin.png",
-      "TITLE":"LINKEDIN",
-      "HREF":""
+      "IMG": "/icons/networks/linkedin.png",
+      "TITLE": "LINKEDIN",
+      "HREF": ""
     }
   ],
+  "ABOUT": {
+    "LABEL": "Smart City.",
+    "TITLE1": "Interaction et transformation urbaine durable",
+    "TEXT1": "Un système holistique où le capital humain et social interagissent, en utilisant des solutions basées sur les TIC.",
+    "TITLE2": "L’objectif d’une Smart City est de parvenir à une gestion efficace",
+    "TEXT2": "répondant aux besoins de la ville et de ses citoyens.",
+    "TITLE3": "Conseil et assistance en gestion de Smart Cities",
+    "TEXT3": "Services nationaux et internationaux avec une approche éthique, durable et innovante."
+  },
   "CONTACT_FORM": {
-    "HEADING": "Contactez-nous si vous avez des questions ou des commentaires sur le sujet, ou <span class=\"text-[var(--color-title)]\">inscrivez-vous</span> pour recevoir plus d’informations sur les villes intelligentes.",
+    "HEADING": "Contactez-nous si vous avez des questions ou des commentaires sur le sujet, ou <span class=\"text-[var(--color-title)]\">inscrivez-vous</span> pour recevoir plus d’informations sur les Smart Cities.",
     "NAME_PLACEHOLDER": "Nom",
     "EMAIL_PLACEHOLDER": "Mail",
     "MESSAGE_PLACEHOLDER": "Message",
