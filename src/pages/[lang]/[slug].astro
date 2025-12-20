@@ -44,7 +44,7 @@ if (!item) {
 ---
 
 <Layout title={item.TITLE_TEXT}>
-  <SmartEcosystem/>
+  <SmartEcosystem item={{ TITLE: item.TITLE, DESCRIPTION: item.DESCRIPTION }} />
   <Areas/>
   <Service/>
   <Contact/>
