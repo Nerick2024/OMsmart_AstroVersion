@@ -1,0 +1,525 @@
+---
+// file: tu-componente.astro (o donde lo tengas)
+import "../styles/nuevo.css";
+---
+
+<div
+  id="semos"
+  class="z-[5] box-border relative mx-auto border-white/25 border-t w-full h-auto md:min-h-[1700px] overflow-hidden"
+>
+  <div
+    class="top-0 left-0 z-[1] box-border absolute w-full h-full overflow-hidden elfondo paris-wrapper"
+  >
+    <div id="page" class="top-0 left-0 z-0 absolute w-full h-full">
+      <div
+        id="container"
+        class="top-0 left-0 z-0 absolute w-full h-full origin-center"
+      >
+        {
+          Array.from({ length: 16 }).map((_, i) => (
+            <div
+              id={`p${String(i + 1).padStart(2, "0")}`}
+              class="w-[25%] h-[25%]"
+            >
+              {Array.from({ length: 30 }).map((_, j) => (
+                <b class={`s${String(j + 1).padStart(3, "0")}`} />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+ <!-- TEXTOS -->
+ <div
+ id="textos"
+ class="top-[50px] md:right-0 md:left-0 z-[20] md:absolute relative flex md:flex-row flex-col mx-auto w-full md:max-w-[1200px]"
+>
+    <div
+      class="flex flex-col items-center md:items-start p-4 md:p-0 w-full md:w-auto md:text-left text-center"
+    >
+      <div
+        id="textos1"
+        class="md:top-0 md:left-0 md:absolute w-full md:w-[560px] md:text-left"
+      >
+        <div class="md:pl-5 os-animation" data-anim="fadeInLeft" style="--delay:1s">
+          <span class="font-normal text-[#00ffff] text-[32px] md:text-[52px]">
+            <img
+              src="/imagenes/cruz.png"
+              class="inline w-[29px] h-[29px] object-contain"
+              alt="cruz"
+            /> Smart City.
+          </span>
+          <span class="font-normal text-[32px] text-white md:text-[52px]">
+            Interacción y transformación urbana sostenible
+          </span>
+          <br /><br />
+          <span class="font-light text-white text-lg leading-[150%]">
+            Un sistema holístico donde interactúan el capital humano y social,
+            empleando soluciones basadas en TIC’s.
+          </span>
+        </div>
+      </div>
+
+      <div
+        id="textos2"
+        class="md:top-[770px] md:right-0 md:absolute mt-8 md:mt-0 w-full md:w-[456px] md:text-right"
+      >
+        <div class="md:pr-5 os-animation" data-anim="fadeInLeft" style="--delay:1s">
+          <span
+            class="font-semibold text-[#00ffff] text-sm uppercase tracking-[-5px]"
+            >________</span
+          >
+          <span class="font-semibold text-[#00ffff] text-sm uppercase">
+            Smart City</span
+          >
+          <br /><br />
+          <span class="text-[#00ffff] text-3xl">
+            <img
+              src="/imagenes/cruz.png"
+              class="inline w-[29px] h-[29px] object-contain"
+              alt="cruz"
+            />
+          </span>
+          <span class="text-white text-3xl">
+            El propósito de una Smart City es alcanzar una gestión eficiente
+          </span>
+          <br />
+          <span class="font-light text-white text-lg leading-[150%]">
+            satisfaciendo las necesidades de la ciudad y sus ciudadanos.
+          </span>
+        </div>
+      </div>
+
+      <div
+        id="textos3"
+        class="md:top-[1300px] md:left-0 md:absolute mt-8 md:mt-0 w-full md:w-[550px] md:text-left"
+      >
+        <div class="md:pl-5 os-animation" data-anim="fadeInLeft" style="--delay:1s">
+          <span
+            class="font-semibold text-[#00ffff] text-sm uppercase tracking-[-5px]"
+            >________</span
+          >
+          <span class="font-semibold text-[#00ffff] text-sm uppercase">
+            Smart City</span
+          >
+          <br /><br />
+          <span class="text-white text-3xl">
+            <img
+              src="/imagenes/cruz.png"
+              class="inline w-[29px] h-[29px] object-contain"
+              alt="cruz"
+            />
+            Consultoría y asesoría en gestión de ciudades inteligentes
+          </span>
+          <br />
+          <span class="font-light text-white text-lg leading-[150%]">
+            Servicios nacionales e internacionales con enfoque ético,
+            sustentable e innovador.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIFICIOS -->
+  <div
+    id="edificio"
+    class="hidden md:block top-1/2 left-1/2 z-[10] absolute w-full max-w-[1200px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    style="aspect-ratio:1200 / 1510;"
+  >
+    {
+      [
+        { id: 1, img: "e1.png", anim: "fadeIn", delay: "1s" },
+        { id: 2, img: "e3.png", anim: "fadeInDown", delay: "3s", brilla: true },
+        { id: 3, img: "e5.png", anim: "fadeInDown", delay: "5s", brilla: true },
+        { id: 4, img: "e4.png", anim: "fadeInUp", delay: "4s" },
+        { id: 5, img: "e2.png", anim: "fadeInUp", delay: "2s" },
+        { id: 6, img: "e6.png", anim: "fadeInUp", delay: "6s", brilla: true },
+      ].map((e) => (
+        <div
+          id={`edificio${e.id}`}
+          class="top-0 left-1/2 absolute w-full max-w-[1200px] -translate-x-1/2"
+          style="aspect-ratio:1200 / 1510;"
+        >
+          <div
+            class="os-animation"
+            data-anim={e.anim}
+            style={`--delay:${e.delay}`}
+          >
+            <img src={`/imagenes/${e.img}`} class={e.brilla ? "brilla w-full h-auto object-contain" : "w-full h-auto object-contain"} alt={`edificio-${e.id}`} />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <center class="md:hidden">
+    <img
+      src="/imagenes/edificios.png"
+      id="edimagen"
+      class="w-full max-w-[1200px] h-auto object-contain"
+      alt="edificios"
+    />
+  </center>
+</div>
+
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          el.classList.add("animated", el.dataset.anim);
+          el.style.animationDelay =
+            getComputedStyle(el).getPropertyValue("--delay");
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+
+  document
+    .querySelectorAll(".os-animation")
+    .forEach((el) => observer.observe(el));
+</script>
+<style>
+  #page,
+  #container,
+  #container > div,
+  [id^="p"],
+  #container b,
+  b[class^="s"] {
+    position: absolute;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+  }
+
+  #page {
+    perspective: 700px;
+    transform-origin: 50% 50%;
+    z-index: 0;
+  }
+
+  /* Container: origen y animación spin */
+  #container {
+    transform-origin: 50% 50%;
+    animation: spin 30s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  /* Spin keyframes */
+  @keyframes spin {
+    from {
+      transform: rotateX(0) rotateY(0) rotateZ(0deg);
+    }
+    33% {
+      transform: rotateX(50deg) rotateY(-20deg) rotateZ(30deg);
+    }
+    66% {
+      transform: rotateX(-50deg) rotateY(20deg) rotateZ(-30deg);
+    }
+    to {
+      transform: rotateX(0) rotateY(0) rotateZ(0deg);
+    }
+  }
+
+  /* ---------- "estrellas" (b con clases sXXX) ---------- */
+  b[class^="s"] {
+    height: 2px;
+    width: 2px;
+    background: #fff;
+    box-shadow: 0 0 5px #fff;
+  }
+
+  /* Animación base para las sXXX */
+  @keyframes s {
+    from {
+      transform: translateZ(-300px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateZ(300px);
+      opacity: 0;
+    }
+  }
+
+  /* posiciones */
+  .s001 {
+    top: 05%;
+    left: 92%;
+    animation: s 6s linear infinite;
+  }
+  .s002 {
+    top: 26%;
+    left: 07%;
+    animation: s 7s linear infinite;
+  }
+  .s003 {
+    top: 89%;
+    left: 24%;
+    animation: s 6.2s linear infinite;
+  }
+  .s004 {
+    top: 85%;
+    left: 87%;
+    animation: s 5.8s linear infinite;
+  }
+  .s005 {
+    top: 26%;
+    left: 56%;
+    animation: s 4.4s linear infinite;
+  }
+  .s006 {
+    top: 74%;
+    left: 32%;
+    animation: s 7.1s linear infinite;
+  }
+  .s007 {
+    top: 15%;
+    left: 74%;
+    animation: s 5.3s linear infinite;
+  }
+  .s008 {
+    top: 68%;
+    left: 51%;
+    animation: s 5.8s linear infinite;
+  }
+  .s009 {
+    top: 21%;
+    left: 37%;
+    animation: s 6.2s linear infinite;
+  }
+  .s010 {
+    top: 53%;
+    left: 41%;
+    animation: s 6s linear infinite;
+  }
+  .s011 {
+    top: 33%;
+    left: 81%;
+    animation: s 7.3s linear infinite;
+  }
+  .s012 {
+    top: 49%;
+    left: 64%;
+    animation: s 3.2s linear infinite;
+  }
+  .s013 {
+    top: 24%;
+    left: 51%;
+    animation: s 5.5s linear infinite;
+  }
+  .s014 {
+    top: 57%;
+    left: 22%;
+    animation: s 6.8s linear infinite;
+  }
+  .s015 {
+    top: 19%;
+    left: 07%;
+    animation: s 6s linear infinite;
+  }
+  .s016 {
+    top: 62%;
+    left: 42%;
+    animation: s 4.7s linear infinite;
+  }
+  .s017 {
+    top: 52%;
+    left: 63%;
+    animation: s 3.9s linear infinite;
+  }
+  .s018 {
+    top: 43%;
+    left: 19%;
+    animation: s 5.1s linear infinite;
+  }
+  .s019 {
+    top: 95%;
+    left: 28%;
+    animation: s 7.3s linear infinite;
+  }
+  .s020 {
+    top: 05%;
+    left: 71%;
+    animation: s 6.8s linear infinite;
+  }
+  .s021 {
+    top: 67%;
+    left: 53%;
+    animation: s 7.9s linear infinite;
+  }
+  .s022 {
+    top: 32%;
+    left: 25%;
+    animation: s 5.1s linear infinite;
+  }
+  .s023 {
+    top: 47%;
+    left: 38%;
+    animation: s 5.8s linear infinite;
+  }
+  .s024 {
+    top: 19%;
+    left: 42%;
+    animation: s 6.7s linear infinite;
+  }
+  .s025 {
+    top: 11%;
+    left: 18%;
+    animation: s 6.3s linear infinite;
+  }
+  .s026 {
+    top: 37%;
+    left: 29%;
+    animation: s 8.1s linear infinite;
+  }
+  .s027 {
+    top: 64%;
+    left: 94%;
+    animation: s 7.5s linear infinite;
+  }
+  .s028 {
+    top: 28%;
+    left: 82%;
+    animation: s 7.7s linear infinite;
+  }
+  .s029 {
+    top: 71%;
+    left: 99%;
+    animation: s 6.1s linear infinite;
+  }
+  .s030 {
+    top: 94%;
+    left: 37%;
+    animation: s 7s linear infinite;
+  }
+
+  /* ---------- Paneles---------- */
+  #p01 {
+    top: 00%;
+    left: 00%;
+    transform: rotate(182deg);
+    animation: p 7.1s linear infinite;
+  }
+  #p02 {
+    top: 00%;
+    left: 25%;
+    transform: rotate(179deg);
+    animation: p 5.3s linear infinite;
+  }
+  #p03 {
+    top: 00%;
+    left: 50%;
+    transform: rotate(185deg);
+    animation: p 7.5s linear infinite;
+  }
+  #p04 {
+    top: 00%;
+    left: 75%;
+    transform: rotate(183deg);
+    animation: p 6.6s linear infinite;
+  }
+  #p05 {
+    top: 25%;
+    left: 00%;
+    transform: rotate(174deg);
+    animation: p 8.7s linear infinite;
+  }
+  #p06 {
+    top: 25%;
+    left: 25%;
+    transform: rotate(178deg);
+    animation: p 8.9s linear infinite;
+  }
+  #p07 {
+    top: 25%;
+    left: 50%;
+    transform: rotate(181deg);
+    animation: p 7.2s linear infinite;
+  }
+  #p08 {
+    top: 25%;
+    left: 75%;
+    transform: rotate(177deg);
+    animation: p 9.5s linear infinite;
+  }
+  #p09 {
+    top: 50%;
+    left: 00%;
+    transform: rotate(186deg);
+    animation: p 5.6s linear infinite;
+  }
+  #p10 {
+    top: 50%;
+    left: 25%;
+    transform: rotate(184deg);
+    animation: p 6.1s linear infinite;
+  }
+  #p11 {
+    top: 50%;
+    left: 50%;
+    transform: rotate(180deg);
+    animation: p 6.5s linear infinite;
+  }
+  #p12 {
+    top: 50%;
+    left: 75%;
+    transform: rotate(176deg);
+    animation: p 5.9s linear infinite;
+  }
+  #p13 {
+    top: 75%;
+    left: 00%;
+    transform: rotate(183deg);
+    animation: p 7.6s linear infinite;
+  }
+  #p14 {
+    top: 75%;
+    left: 25%;
+    transform: rotate(177deg);
+    animation: p 8.7s linear infinite;
+  }
+  #p15 {
+    top: 75%;
+    left: 50%;
+    transform: rotate(181deg);
+    animation: p 7s linear infinite;
+  }
+  #p16 {
+    top: 75%;
+    left: 75%;
+    transform: rotate(179deg);
+    animation: p 5.4s linear infinite;
+  }
+
+  @keyframes p {
+    from {
+      transform: translateZ(-300px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateZ(300px);
+      opacity: 0;
+    }
+  }
+
+  .os-animation {
+    opacity: 0;
+  }
+  .os-animation.animated {
+    opacity: 1;
+  }
+</style>
+</style>
