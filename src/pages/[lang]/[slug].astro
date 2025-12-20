@@ -1,35 +1,51 @@
 ---
-import { useTranslation, slugify } from "@/i18n";
-import { translations, defaultLang } from "@/i18n/config";
+import SmartEcosystem from "@/components/SmartEcosystem.astro";
+import Areas from "@/components/Areas.astro";
+import Service from "@/components/Service.astro";
+import Contact from "@/components/Contact.astro";
 import Layout from "@/layouts/Layout.astro";
+
+import { useTranslation, slugify } from "@/i18n";
+import { translations } from "@/i18n/config";
 
 export async function getStaticPaths() {
   const paths: any[] = [];
   for (const lang of Object.keys(translations)) {
     const t = await (translations as any)[lang]();
-    const aboutUsSlug = slugify(String(t?.NAVBAR?.ABOUT_US || "about-us"));
-    paths.push({ params: { lang, slug: aboutUsSlug } });
+    const items = t.NAVBAR.SMART_ECOSYSTEM_ITEMS;
+    if (items && Array.isArray(items)) {
+      for (const item of items) {
+        if (item.TITLE_TEXT) {
+          paths.push({ params: { lang, slug: slugify(item.TITLE_TEXT) } });
+        }
+      }
+    }
   }
   return paths;
 }
 
-const lang = Astro.params.lang ?? defaultLang;
-const slug = Astro.params.slug as string | undefined;
+const { lang, slug } = Astro.params;
+
+// Redirigimos a la página de inicio en español como opción por defecto.
+if (!lang) {
+  return Astro.redirect('/es/');
+}
+
 const t = await useTranslation(lang as any);
 
-const aboutUsSlug = slugify(String(t?.NAVBAR?.ABOUT_US || "about-us"));
-const isAboutPage = slug === aboutUsSlug;
+const item = t.NAVBAR.SMART_ECOSYSTEM_ITEMS.find(
+  (i: any) => slugify(i.TITLE_TEXT) === slug
+);
+
+// Si no se encuentra el elemento, redirigir a la página de inicio del idioma actual.
+if (!item) {
+  return Astro.redirect(`/${lang}/`);
+}
 ---
 
-{isAboutPage ? (
-  <Layout title={t.NAVBAR.ABOUT_US}>
-    <h1>{t.NAVBAR.ABOUT_US}</h1>
-  </Layout>
-) : (
-  <Layout title="Not found">
-    <main>
-      <h1>404 — Not found</h1>
-      <p>The requested page could not be found.</p>
-    </main>
-  </Layout>
-)}
+<Layout title={item.TITLE_TEXT}>
+  <SmartEcosystem/>
+  <Areas/>
+  <Service/>
+  <Contact/>
+</Layout>
