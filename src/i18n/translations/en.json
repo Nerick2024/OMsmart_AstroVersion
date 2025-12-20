@@ -90,5 +90,21 @@
     "EMAIL_PLACEHOLDER": "Mail",
     "MESSAGE_PLACEHOLDER": "Message",
     "SUBMIT_BUTTON": "Submit"
+  },
+  "INFORMATION": {
+    "MISSION_TITLE": "Mission",
+    "MISSION_TEXT": "To devise intelligent solutions for the technological and sustainable development of cities and communities, always seeking the inclusion and accessibility of people.",
+    "VISION_TITLE": "Vision",
+    "VISION_TEXT": "To develop and create city and human settlement projects worldwide that promote inclusivity and guarantee accessibility, security, resource optimization, affordability, and sustainability to achieve prosperity and quality of life.",
+    "VALUES_TITLE": "Values",
+    "VALUES_LIST": [
+      "Excellence",
+      "Responsibility",
+      "Passion",
+      "Leadership",
+      "Ethics",
+      "Innovation",
+      "Professionalism"
+    ]
   }
 }
