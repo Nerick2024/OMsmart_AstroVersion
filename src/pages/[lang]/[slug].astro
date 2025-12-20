@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   const paths: any[] = [];
   for (const lang of Object.keys(translations)) {
     const t = await (translations as any)[lang]();
-    const items = t.NAVBAR.SMART_ECOSYSTEM_ITEMS;
+    const items = t.AREAS.SMART_ECOSYSTEM_ITEMS;
     if (items && Array.isArray(items)) {
       for (const item of items) {
         if (item.TITLE_TEXT) {
@@ -33,7 +33,7 @@ if (!lang) {
 
 const t = await useTranslation(lang as any);
 
-const item = t.NAVBAR.SMART_ECOSYSTEM_ITEMS.find(
+const item = t.AREAS.SMART_ECOSYSTEM_ITEMS.find(
   (i: any) => slugify(i.TITLE_TEXT) === slug
 );
 
@@ -45,7 +45,7 @@ if (!item) {
 
 <Layout title={item.TITLE_TEXT}>
   <SmartEcosystem item={{ TITLE: item.TITLE, DESCRIPTION: item.DESCRIPTION }} />
-  <Areas/>
+  <Areas item={item} />
   <Service/>
   <Contact/>
 </Layout>

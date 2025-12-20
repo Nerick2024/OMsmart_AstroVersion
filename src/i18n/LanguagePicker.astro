@@ -8,7 +8,7 @@ const routeKeys = new Set<string>();
 for (const [l] of Object.entries(locales)) {
   const t = await useTranslation(l as any);
   SLUGS[l] = {} as Record<string, string>;
-  Object.entries(t.NAVBAR || {}).forEach(([key, label]) => {
+  Object.entries(t.AREAS || {}).forEach(([key, label]) => {
     if (key === "SMART_ECOSYSTEM_ITEMS") {
       // We don't add SMART_ECOSYSTEM_ITEMS to routeKeys, but its items.
       (label as any[]).forEach((item, index) => {

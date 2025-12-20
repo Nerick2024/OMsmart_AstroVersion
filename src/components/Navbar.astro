@@ -36,7 +36,7 @@ const i18n = await useTranslation(lang);
         class="top-full left-0 z-20 absolute flex flex-col gap-2 bg-[#050647]/90 opacity-0 group-hover:opacity-100 shadow-[0_8px_20px_rgba(0,0,0,0.4)] p-[10px] rounded-[8px] min-w-[320px] transition-all -translate-y-[6px] group-hover:translate-y-0 duration-200 pointer-events-none group-hover:pointer-events-auto"
       >
         {
-          i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS.map((item) => (
+          i18n.AREAS.SMART_ECOSYSTEM_ITEMS.map((item) => (
             <a
               href={`/${lang}/${slugify(item.TITLE_TEXT)}`}
               class="block hover:bg-[var(--color-title)]/10 p-2 rounded-md hover:text-[var(--color-title)]"
@@ -131,20 +131,20 @@ const i18n = await useTranslation(lang);
     class="lg:hidden fixed inset-0 bg-[#050647]/95 opacity-0 backdrop-blur-sm w-full h-screen transition-opacity duration-300 ease-in-out pointer-events-none"
   >
     <nav
-      class="flex flex-col justify-center items-center gap-6 h-full font-medium text-white text-lg overflow-y-auto pt-24 pb-10"
+      class="flex flex-col justify-center items-center gap-6 pt-24 pb-10 h-full overflow-y-auto font-medium text-white text-lg"
     >
       <div class="group relative text-center">
         <a
           href={`/${lang}/`}
-          class="text-2xl font-medium hover:text-[var(--color-title)] transition-colors"
+          class="font-medium hover:text-[var(--color-title)] text-2xl transition-colors"
           >{i18n.NAVBAR.SMART_ECOSYSTEM}</a
         >
         <div class="flex flex-col gap-3 mt-3">
           {
-            i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS.map((item) => (
+            i18n.AREAS.SMART_ECOSYSTEM_ITEMS.map((item) => (
               <a
                 href={`/${lang}/${slugify(item.TITLE_TEXT)}`}
-                class="block p-1 rounded-md text-base hover:text-[var(--color-title)]"
+                class="block p-1 rounded-md hover:text-[var(--color-title)] text-base"
               >
                 {item.TITLE_TEXT}
               </a>
@@ -154,17 +154,17 @@ const i18n = await useTranslation(lang);
       </div>
       <a
         href="#somos"
-        class="text-2xl font-medium hover:text-[var(--color-title)] transition-colors"
+        class="font-medium hover:text-[var(--color-title)] text-2xl transition-colors"
         >{i18n.NAVBAR.ABOUT_US}</a
       >
       <a
         href="#contact"
-        class="text-2xl font-medium hover:text-[var(--color-title)] transition-colors"
+        class="font-medium hover:text-[var(--color-title)] text-2xl transition-colors"
         >{i18n.NAVBAR.CONTACT}</a
       >
       <a
         href="/blog"
-        class="text-2xl font-medium hover:text-[var(--color-title)] transition-colors"
+        class="font-medium hover:text-[var(--color-title)] text-2xl transition-colors"
         >{i18n.NAVBAR.BLOG}</a
       >
       <LanguagePicker />

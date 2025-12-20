@@ -4,7 +4,7 @@ import { getLangFromUrl, useTranslation, slugify } from "@/i18n";
 const lang = getLangFromUrl(Astro.url);
 const i18n = await useTranslation(lang);
 
-const smartEcosystemItems = i18n.NAVBAR.SMART_ECOSYSTEM_ITEMS;
+const smartEcosystemItems = i18n.AREAS.SMART_ECOSYSTEM_ITEMS;
 const currentYear = new Date().getFullYear();
 
 const nodeLayouts = [
