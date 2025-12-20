@@ -9,12 +9,21 @@ for (const [l] of Object.entries(locales)) {
   const t = await useTranslation(l as any);
   SLUGS[l] = {} as Record<string, string>;
   Object.entries(t.NAVBAR || {}).forEach(([key, label]) => {
-    if (key === "SMART_ECOSYSTEM") {
-      SLUGS[l][key] = "";
+    if (key === "SMART_ECOSYSTEM_ITEMS") {
+      // We don't add SMART_ECOSYSTEM_ITEMS to routeKeys, but its items.
+      (label as any[]).forEach((item, index) => {
+        const itemKey = `SMART_ECOSYSTEM_ITEM_${index}`;
+        SLUGS[l][itemKey] = slugify(item.TITLE_TEXT);
+        routeKeys.add(itemKey);
+      });
     } else {
-      SLUGS[l][key] = slugify(String(label));
+      routeKeys.add(key);
+      if (key === "SMART_ECOSYSTEM") {
+        SLUGS[l][key] = "";
+      } else {
+        SLUGS[l][key] = slugify(String(label));
+      }
     }
-    routeKeys.add(key);
   });
 }
 const ROUTE_KEYS = Array.from(routeKeys);
