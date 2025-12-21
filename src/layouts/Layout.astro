@@ -10,6 +10,7 @@ export interface Props {
 
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang={lang}>
   <head>
@@ -29,37 +30,36 @@ const { title } = Astro.props;
 <style is:global>
   @import url("https://fonts.googleapis.com/css?family=Montserrat:300,900|Titillium+Web:400,600,700&display=swap");
 
-  :root{
-	--color-title:#00ffff;
-	--color-text:#ffff;
-	--color-text2:#d5d5d5;
-	--color-blue:#00aaff;
-	--color-bg-1:#000000;
-	--color-bg-2:#011377;
-	--color-bg-3:#050653;
-	--color-bg-subtitle:#0b0c48;
+  :root {
+    --color-title: #00ffff;
+    --color-text: #ffff;
+    --color-text2: #d5d5d5;
+    --color-blue: #00ccff;
+    --color-bg-1: #000000;
+    --color-bg-2: #011377;
+    --color-bg-3: #050653;
+    --color-bg-subtitle: #0b0c48;
   }
   html,
   body {
     font-family: "Titillium Web", sans-serif;
   }
 
-  html{
+  html {
     background-color: var(--color-bg-1);
     scroll-behavior: smooth;
   }
   /* TÍTULOS */
   h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     font-family: "Montserrat", sans-serif;
   }
 
   /* TEXTO NORMAL */
-  p,
+  h3,
+  h4,
+  h5,
+  h6p,
   span,
   li,
   a,
